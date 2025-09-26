@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.container {
+ 			display: flex;
+ 			gap: 20px;
+		}
+		.column {
+  			flex: 1;
+  			padding: 20px;
+  			background: lightblue;
+		}
+        
+        @media screen and (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+	</style>
+</head>
+
+<body>
+	<div class="container">
+  		<div class="column">Konten 1</div>
+  		<div class="column">Konten 2</div>
+  		<div class="column">Konten 3</div>
+	</div>
+</body>
+</html>
+
