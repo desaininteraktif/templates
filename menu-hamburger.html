@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Hamburger Menu</title>
+	
+<style>
+	
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #eee;
+  padding: 30px 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo a {
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
+  color: #000;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.menu li a:hover {
+  color: blue;
+}
+    
+/* ==================== Tambahan CSS ==================== */
+
+.menu .icon {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menu li:not(:last-child) {
+    display: none; 
+  }
+  .menu .icon {
+    display: block; 
+  }
+  .menu.responsive {
+    flex-direction: column;
+    gap: 0;
+    background-color: #eee;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 10px;
+    z-index: 1;
+  }
+  .menu.responsive li {
+    display: block;
+    text-align: left;
+    border-top: 1px solid #ddd;
+    width: 100%;
+  }
+  .menu.responsive li a {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+  }
+    
+  .menu .icon {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+    
+  .menu.responsive .icon {
+    display: block;
+    position: absolute;
+    right: 28px;
+    top: -75px;
+    width: 0px;
+    }
+
+
+}
+
+    
+</style>
+	
+</head>
+
+<body>
+	
+<div class="navbar">
+	<div class="logo">
+    	<a href="#">MyLogo</a> <!-- Bisa diganti gambar -->
+    </div>
+	<div>
+    	<ul class="menu" id="mymenu">
+    		<li><a href="#">Home</a></li>
+    		<li><a href="#">About</a></li>
+    		<li><a href="#">Services</a></li>
+    		<li><a href="#">Blog</a></li>
+    		<li><a href="#">Contact</a></li>
+            <li><a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a></li>
+		</ul>
+	</div>
+</div>
+    
+<div style="padding:50px 5vw;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu cursus leo. Ut auctor elit ante, vel semper orci pharetra vel. Etiam eu lectus quam. Cras dictum lectus quis augue fringilla ullamcorper. Nulla facilisi. Phasellus urna massa, sodales nec rutrum non, gravida sed ligula. Duis ut elit in erat dictum mollis sit amet accumsan dui.</p></div>s
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mymenu");
+  if (x.className === "menu") {
+    x.className += " responsive";
+  } else {
+    x.className = "menu";
+  }
+}
+</script>
+
+</body>
+</html>
